@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  streamlink:
+    container_name: streamlink
+    build: .
+    image: mayniki/streamlink
+    volumes:
+      - "./vods:/home/download"
+    environment:
+      - streamLink='twitch.tv/LINK'
+      - streamQuality='best'
+      - streamName='twitch'
+      - streamOptions='--twitch-disable-hosting'
+      - GID=1000
+      - UID=1000
+    stdin_open: true
+    tty: true
