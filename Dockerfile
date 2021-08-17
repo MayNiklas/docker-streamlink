@@ -17,4 +17,12 @@ RUN mkdir /home/plugins
 
 COPY ./entrypoint.sh /home/script
 RUN ["chmod", "+x", "/home/script/entrypoint.sh"]
+
+ENV streamLink='twitch.tv/LINK' \
+    streamName='twitch' \
+    streamQuality='best' \
+    streamOptions='--twitch-disable-hosting' \
+    GID=1000 \
+    UID=1000
+
 ENTRYPOINT [ "/home/script/entrypoint.sh" ]
