@@ -20,5 +20,4 @@ RUN apt update && \
     apt-get autoclean && \
     apt-get clean
 
-COPY ./entrypoint.sh /home/script
 ENTRYPOINT [ "/bin/sh","/home/script/entrypoint.sh" ]
