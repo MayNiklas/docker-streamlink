@@ -83,14 +83,10 @@
         chown -R  python:python /home/script
         chown -R  python:python /home/download
 
-        su python << EOF
-
         while [ true ]; do
-          streamlink $streamOptions $streamLink $streamQuality -o /home/download/$streamName"-$(date +%Y%m%d-%H%M%S)".mkv
+          su python -c "streamlink $streamOptions $streamLink $streamQuality -o /home/download/$streamName"-$(date +%Y%m%d-%H%M%S)".mkv"
           sleep 60s
         done
-
-        EOF
 
   - name: 'collect files'
     find:
