@@ -1,7 +1,7 @@
 ARG ARCH=
 FROM ${ARCH}ubuntu:20.04
 
-ENV streamlinkVersion=2.3.0 \
+ENV streamlinkVersion=3.1.1 \
     streamLink='twitch.tv/LINK' \
     streamName='twitch' \
     streamQuality='best' \
